@@ -1,0 +1,939 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 入れておくべき基本のレスポンシブCSS */
+/* 「float」「position」はレスポンシブの敵 */
+/* 一個一個解除していくのは面倒 */
+/* 一括で全部解除しちゃいましょう */
+/* 必要になったらまた追加すればOKです。 */
+* {
+	float: none;
+	position: static;
+}
+ 
+img {
+	max-width: 100%;
+	height: auto;
+}
+/****************************************
+* レスポンシブ対応
+*****************************************/
+@media screen and (min-width:769px) {
+	#contents{
+		display: flex;
+		max-width: 1500px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width:768px) {
+	#contents{
+		width: 95%;
+		margin: 0;
+	}
+}
+@media screen and (max-width:480px) {
+	#contents{
+		width: 95%;
+		margin: 0;
+		
+	}
+	#contents img{
+		width: 95%;
+		height: 300px;
+	}
+}
+/* 以下は画面サイズが1024px以上になったら適応されます */
+@media screen and (min-width: 768px) {
+	#contents {
+		display: flex;
+		max-width: 1500px;
+		font-size: 1.125;
+		margin: 0 auto;
+	}
+}
+
+/* 以下は画面サイズが768px以下になったら適応されます */
+/* @media screen and (max-width: 768px) {
+	#contents {
+		width: 100%;
+		margin: 0 auto;
+	}
+} */
+
+/* 以下は画面サイズが768px〜1024pxまでのあいだに適応されます */
+/* @media screen and (min-width:768px) and (max-width:1024px){
+	#contents {
+		display: flex;
+		margin: 0 auto;
+	}
+    } */
+
+/****************************************
+* フォント設定
+*****************************************/
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
+html, body {
+	font-size: 18px;
+	font-family: 'Kaisei Opti', serif;
+}
+@import url('https://fonts.googleapis.com/css2？family = Kaisei + Opti&family = Potta + One& display = swap');
+.header_inner span {
+	font-size: 18px;
+	font-family: 'Kaisei Opti'、セリフ;
+	font-family: 'Potta One'、筆記体;
+}
+
+
+/****************************************
+* header 設定
+*****************************************/
+header {
+	width: 100%;
+	height: 90px;
+	border-bottom: solid 1px #c0c0c0;
+}
+.header_inner {
+	max-width: 1500px;
+	width: 90%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	margin: 0 auto;
+	align-items: center;
+}
+.header_inner span {
+	font-size: 1.5rem;
+	font-family: 'Potta One'、筆記体;
+	color: #a52a2a;
+	font-weight: bold;
+}
+.header_logo img {
+	flex: none;
+	width: auto;
+	height: 80px;
+}
+.header_logo a {
+	text-align: center;
+}
+.header_logo img:hover {
+	background-color: #4791AA;
+	border-radius: 50px;
+}
+.header_nav {
+	margin-left: auto;
+	display: flex;
+	flex: none;
+	align-items: center;
+	vertical-align: middle;
+}
+.header_nav>*+* {
+	margin-left: 60px;
+}
+.nav_item a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.nav_item a:hover {
+	color: #4791AA;
+	border-bottom: solid 2px #4791AA;
+}
+
+.menu-btn{
+	display: none;
+}
+
+ @media screen and (max-width: 480px) {
+/* header */
+	.header_inner h2{
+		text-align: center;
+		margin-left: 32px;
+	}
+	.i{
+		width: auto;
+		height: 30px;
+	}
+	.header_nav{
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 80vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: #e0e0e0dd;
+		z-index: 9998;
+	}
+	.nav_item{
+		width: 100%;
+		height: auto;
+		padding: .5em 1em;
+		text-align: center;
+		color: #fff;
+		box-sizing: border-box;
+		margin: 10px 0;
+	}
+	.nav_item a{
+		color: #4791AA;
+	}
+
+	.menu-btn{
+		position: absolute;
+		top: 70px;
+		right: 20px;
+		/* z-index: 2; */
+		width: 40px;
+		height: 40px;
+		border-radius: 8px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #4791AA;
+		color: #fff;
+		z-index: 9999;
+	}
+
+/*----------------------------
+* アニメーション部分
+*----------------------------*/
+	/* アニメーション前のメニューの状態 */
+	.header_nav{
+		transform-origin: top left;
+		transform: rotateZ(-90deg);
+		transition: all .3s ease;
+	}
+	/* アニメーション後のメニューの状態 */
+	.header_nav.is-active{
+		transform: rotateZ(0deg);
+	}
+}
+
+
+/****************************************
+* 共通設定
+*****************************************/
+.content__header {
+	max-width: 1500px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.content__header__inner {
+	font-size: 1.8rem;
+	font-weight: 900;
+	color: #4791AA;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+.content__header__border {
+	margin: 10px auto;
+	width: 50%;
+	border-bottom: solid 3px #4791AA;
+}
+.content__items {
+	max-width: 1500px;
+	padding: 50px 0 70px;
+	margin: 0 auto;
+}
+.content__inner {
+	margin: 0 auto;
+}
+
+@media screen and (max-width:480px) {
+	.content__header {
+		width: 100%;
+		text-align: center;
+		/* margin-bottom: 60px; */
+	}
+	.content__header__inner {
+		font-size: 1.8rem;
+		font-weight: 900;
+		color: #4791AA;
+		display: inline-block;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.content__header__border {
+		margin: 10px auto;
+		width: 50%;
+		border-bottom: solid 3px #4791AA;
+	}
+	.content__items {
+		max-width: 1500px;
+		padding: 50px 0 70px;
+		margin: 0 auto;
+	}
+	.content__inner {
+		margin: 0 auto;
+	}
+}
+
+
+/****************************************
+* aタグを親要素いっぱいに広げる
+*****************************************/
+.a_btn {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	text-decoration: none;
+}
+
+/****************************************
+* top slider 設定
+*****************************************/
+#top__visual {
+      max-width: 1500px;
+      padding-top: 5px;
+      margin: 0 auto ;
+}
+.slider img {
+      width: 100%;
+	height: 600px;
+      vertical-align: bottom;
+}
+
+.slider {
+      visibility: hidden;
+}
+.slider.slick-initialized {
+      visibility: visible;
+}
+
+.slider_text p {
+	position: absolute;
+	top: 68%;
+	left: 68%;
+	transform: translateY(-50%) translateX(-50%);
+	max-width: 1500px;
+	color: #fff;
+	text-shadow:2px 2px 0 #a52a2a;
+	font-size: 1.875rem;
+	font-weight: 400;
+	line-height: 1.2;
+	z-index: 9990;
+}
+/* TOP画像 レスポンシブ */
+@media screen and (max-width: 480px) {
+	#top_visual {
+		width: 100%;
+	}
+	.slider img {
+		width: 100%;
+		height: 400px;
+		margin: auto;
+	}
+	.slider_text p {
+		position: none;
+		top: 50%;
+		left: 38%;
+		font-size: 1.275rem;
+		line-height: 2;
+	}
+}
+
+
+
+/****************************************
+* ページトップアイコン 設定
+*****************************************/
+#page_top{
+	width: 90px;
+	height: 90px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	background: #4791AA;
+	opacity: 0.6;
+	border-radius: 50%;
+	z-index: 9995;
+    }
+    #page_top a{
+	position: relative;
+	display: block;
+	width: 90px;
+	height: 90px;
+	text-decoration: none;
+    }
+    #page_top a::before{
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: '\f102';
+	font-size: 25px;
+	color: #fff;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: -40px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	text-align: center;
+    }
+    #page_top a::after{
+	content: 'PAGE TOP';
+	font-size: 13px;
+	color: #fff;
+	position: absolute;
+	top: 45px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	text-align: center;
+    }
+
+@media screen and (max-width:480px) {
+	#page_top{
+		display: none;
+	    }
+}
+
+/****************************************
+* FlexBox 設定
+*****************************************/
+#visual {
+	max-width: 1500px;
+	margin: 0 auto;
+	background-color: #f0f0f0f0;
+}
+.about_inner {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 0;
+	justify-content: center;
+	text-align: center;
+}
+.about_inner .left {
+	display: block;
+	width: 18%;
+	position: relative;
+  }
+.about_inner .text-area {
+	position: absolute;
+	top: 40px;
+	left: 180px;
+	text-align: left;
+}
+.about_inner .left .title {
+	/* line-height: 1; */
+	margin-bottom: 56px;
+}
+/*
+「display: block;」を設定することで、
+改行されてmargin-bottomが効くようになる。
+※spanタグはデフォルトではinlineのため、
+改行もされないしmargin-bottomも効かない
+*/
+.about_inner .left .title .en {
+	display: block;
+	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+.en span {
+	color: #a52a2a;
+	text-shadow: 6px 8px 0 #4791AA;
+}
+.about_inner .left .title .ja {
+	display: block;
+	font-size: 0.875rem;
+	border-bottom: solid 1px #4791AA;
+}
+.about_inner .left .copy {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	letter-spacing: 2;
+	text-shadow: 0px 1px 1px #fff;
+}
+.about_inner .right {
+	width: 65%;
+}
+.about_inner .right img {
+	width: 50%;
+	height: 300px;
+	vertical-align: bottom;
+	object-fit: cover;
+	box-shadow: 5px 5px #4791AA;
+	border-radius: 10px;
+}
+
+@media screen and (max-width:480px) {
+	#visual {
+		width: 100%;
+		background: none;
+		margin: 0;
+	}
+	.about_inner{
+		display: block;
+		width: 100%;
+		height: 200px;
+		padding-top: 10px;
+		padding-bottom: 60px;
+		background: rgb(219, 255, 249);
+		border-bottom: solid 1px #000;
+	}
+	.about_innert .sp{
+		display: block;
+	}
+	.about_inner .left .title {
+		/* line-height: 1; */
+		margin-bottom: 33px;
+	}
+	.about_inner .text-area{
+		display: block;
+		left: 140px;
+		float: left;
+		align-items: center;
+	}
+	.about_inner .left .title .en {
+		font-size: 2rem;
+		margin-bottom: 16px;
+	}
+	.en span {
+		text-shadow: 3px 5px 0 #4791AA;
+	}
+	.about_inner .left .title .ja {
+		font-size: 0.625rem;
+		font-weight: 500;
+	}
+	.about_inner .left .copy {
+		font-size: 0.6rem;
+		line-height: 1.4;
+		letter-spacing: 4;
+		font-weight: 500;
+	}
+	.about_inner .right {
+		display: none;
+	}
+	.right img {
+		display: none;
+	}
+}
+
+  
+/****************************************
+* Blog設定
+*****************************************/
+.blog_content {
+	max-width: 1000px;
+	padding: 0 20px 70px;
+	margin: 0 auto;
+}
+.blog_items {
+	border-bottom: solid 1px #4791AA;
+	padding: 20px 5%;
+	margin: 10px auto;
+}
+.blog_item {
+	display: inline-block;
+}
+.blog_date {
+	color: #888;
+	background-color: #eee;
+	border-radius: 50px;
+	padding: 5px 20px;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.blog_title {
+	margin-left: 3%;
+	font-weight: 600;
+	color: #000;
+}
+.blog_title:hover {
+	color: #FEBD69;
+}
+.blog_anchor {
+	float: right;
+	font-size: 1.1rem;
+	font-weight: 900;
+	color: #4791AA;
+}
+.blog_anchor:hover {
+	color: #a52a2a;
+}
+.blog_button {
+	position: relative;
+	border-radius: 10px;
+	border: solid 1px #aaa;
+	color: #fff;
+	background-color: #febd69;
+	box-shadow: 2px 2px 0 #888;
+	font-weight: 600;
+	max-width: 220px;
+	margin: 0 auto;
+	margin-top: 40px;
+	padding: 15px 40px;
+	text-align: center;
+}
+.blog_button:hover {
+	background-color: #4791AA;
+}
+
+
+@media screen and (max-width:480px) {
+	.blog_content {
+		width: 95%;
+		padding: 0 0 40px;
+		margin-left: 12px;
+	}
+	.blog_items {
+		width: 90%;
+		padding: 20px 0;
+		margin: 10px 0;
+	}
+	.blog_item {
+		display: block;
+		width: 100%;
+	}
+	.blog_date {
+		width: 20%;
+		margin-bottom: 20px;
+	}
+	.blog_title:hover {
+		display: none;
+	}
+	.blog_anchor {
+		display: none;
+	}
+	.blog_anchor:hover {
+		display: none;
+	}
+	.blog_button {
+		font-weight: 400;
+		max-width: 200px;
+	}
+	.blog_button:hover {
+		display: none;
+	}
+}
+
+/****************************************
+* Links設定
+*****************************************/
+.links_container {
+	max-width: 1500px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 280px 280px;
+	gap: 16px;
+	text-align: center;
+}
+.links_grid {
+	/* background-clip: padding-box; */
+    /* border: 1px solid #bdbdbd; */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+}
+
+@media screen and (max-width:480px) {
+	.links_container {
+		width: 95%;
+		grid-template-columns: 1fr 1fr ;
+		grid-template-rows: 220px 220px;
+		gap: 10px;
+		margin-left: 12px;
+	}
+	.links_grid {
+		/* background-clip: padding-box; */
+	    /* border: 1px solid #bdbdbd; */
+	    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+	}
+	
+}
+
+
+/****************************************
+* contact 設定
+*****************************************/
+.contact_inner {
+	max-width: 1500px;
+	margin: 40px auto;
+}
+.contact_img {
+	text-align: center;
+	padding-bottom: 40px;
+}
+.contact_text {
+	width: 500px;
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: left;
+	letter-spacing: 5px;
+}
+.contact_button {
+	max-width: 300px;
+  	margin: 0 auto;
+}
+.contact_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #febd69;
+	box-sizing: border-box;
+	width: 100%;
+	height: 80px;
+	padding: 0 25px;
+	color: #febd69;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	text-decoration: none;
+	position: relative;
+	transition-duration: 0.2s;
+}
+.contact_btn:hover {
+	background: #febd69;
+	border: 1px solid #febd69;
+	color: #fff;
+}
+.contact_btn::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 40px 50px;
+	border-color: transparent transparent #febd69 transparent;
+}
+.contact_btn span {
+	position: absolute;
+	bottom: 12px;
+	right: 20px;
+	display: inline-block;
+}
+.contact_btn span::before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: #ffffff;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -8px;
+}
+.contact_btn span::after {
+	content: '';
+	width: 6px;
+	height: 6px;
+	border: 0;
+	border-top: 2px solid #febd69;
+	border-right: 2px solid #febd69;
+	transform: rotate(45deg);
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	margin-top: -3px;
+}
+
+@media screen and (max-width:480px) {
+	.contact_inner {
+		width: 100%;
+		margin: 40px auto;
+	}
+	.contact_img {
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.contact_text {
+		width: 400px;
+		padding: 20px 20px;
+		border: solid 1px #4791AA;
+		line-height: 1.5;
+	}
+	.contact_button {
+		max-width: 300px;
+		  margin: 20px auto 0;
+	}
+	.contact_btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #febd69;
+		border: 1px solid #c0c0c0;
+		box-sizing: border-box;
+		width: 100%;
+		height: 80px;
+		padding: 0 25px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		text-decoration: none;
+		position: relative;
+		transition-duration: 0.2s;
+	}
+	.contact_btn:hover {
+		display: none;
+	}
+	.contact_btn::before {
+		display: none;
+	}
+	.contact_btn span {
+		position: absolute;
+		bottom: 12px;
+		right: 20px;
+		display: inline-block;
+	}
+	.contact_btn span::before {
+		display: none;
+	}
+	.contact_btn span::after {
+		display: none;
+	}
+	
+}
+
+/****************************************
+* フッター
+*****************************************/
+footer {
+	width: 100%;
+}
+.footer_box {
+      position: relative;
+	margin: 32px 0  0;
+}
+.footer_box img {
+	width: 100%;
+	height: 300px;
+	margin: 0;
+}
+.icon {
+	max-width: 1000px;
+	display: flex;
+	flex: none;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+	margin: 0 auto;
+	top: 50%;
+	left: 44%;
+}
+.icon img{
+	width: 45px;
+	height: 45px;
+	padding-left: 24px;
+}
+.footer_box P {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      color: #fff;
+      font-weight: 200;
+}
+
+
+@media screen and (max-width: 480px) {
+	.footer_box {
+		position: absolute;
+		margin: 0;
+	}
+	.icon {
+		width: 95%;
+		/* display:block; */
+		margin: 0;
+		top: 65%;
+		left: 0%;
+	}
+}
+
+
+
+
+/*
+疑似要素（before）で白いボックスを作り画像の上に重ねる
+「transform: skewX(-18deg);」で角度をつけて平行四辺形にする
+positionとrightで画像の上に重ねる
+*/
+/* .content .left01::before {
+	content: "";
+	width: 123px;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	right: 386px;
+	transform: skew(17deg);
+} */
+
+/****************************************
+* PC版だと綺麗に見えるけど、スマホ版だと見づらい
+画像の中身をCSSで変更するのは不可能なので、
+スマホ用の画像を用意して切り替える
+*****************************************/
+/* html用
+<img class="pc" src="pc_test.jpg" alt="" />
+<img class="sp" src="sp_test.jpg" alt="" />*/
+
+/* CSSのdisplayプロパティで切り替え */
+/* css用 */
+/* @media screen and (min-width:481px) {
+	.sp{
+		display: none;
+	}
+} */
+/* @media screen and (max-width:480px) {
+	.pc{
+		display: none;
+	}
+} */
