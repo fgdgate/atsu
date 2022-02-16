@@ -24,12 +24,9 @@
 					<img src="<?php bloginfo('template_url'); ?>/atsu_img\IMG_E5512.png" alt="d.gateの似顔絵icon画像です">
 				</a>
 			</div>
-			<h2>Webと<span>D</span>esignの<span>扉</span></h2>
-
-			<!-- ハンバーガーメニュー用 -->
-			<button type="button" class="menu-btn">
-			<i class="fas fa-bars" aria-hidden="true"></i>
-			</button>
+			<div class="header_inner_text">
+				<h2>Webと<span>D</span>esignの<span>扉</span></h2>
+			</div>
 
 			<div class="header_nav">
 				<!--ナビ-->
@@ -39,6 +36,10 @@
 				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#links">Links</a></div>
 				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#contact">Contact</a></div>
 			</div>
+						<!-- ハンバーガーメニュー用 -->
+			<button type="button" class="menu-btn">
+			<i class="fas fa-bars" aria-hidden="true"></i>
+			</button>
 		</div>
 	</header>
 	<div class="main">

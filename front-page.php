@@ -17,114 +17,106 @@
 
       </div>
 </div><!-- slickゾーン終了 -->
+<!-- ページトップアイコン -->
+<div id="page_top"><a href="#"></a></div>
+
 
 <!-- 共通コンテンツ -->
-<div id="contentt" class="content content__items">
-	<div class="content__inner">
+<div id="about" class="about content_items">
+	<div class="content_inner">
 		<!--コンテンツのタイトルエリア-->
-		<div class="content__header">
-			<div class="content__header__inner">
+		<div class="content_header">
+			<div class="content_header_inner">
 				About
 				<!--下線-->
-				<div class="content__header__border"></div>
+        <div class="content_header_border"></div>
       </div>
     </div>
-  </div>
-            <!-- ページトップアイコン -->
-            <div id="page_top"><a href="#"></a></div>
 
-  <!-- profileゾーン -->
-  <div id="visual">
+    <!-- profileゾーン -->
     <div class="about_inner">
-      <div class="left">
-        <div class="text-area">
-          <h2 class="title">
-            <span class="en"><span>P</span>rofile....</span>
-            <span class="ja">D.GATE,中の人</span>
-          </h2>
-          <p class="copy">
-            1973年生/大阪府出身/A型/水瓶座<br>
-            学力と絵心は全くなし。ですが夢を追いかけたくて必死でプログラミングを学びました。<br>
-            現在は、脱！会社員を目標にフリーランス活動を積極的に展開中です。
-
-          </p>
-        </div>
+      <div class="about_img">
+        <img src="<?php bloginfo("template_url"); ?>/atsu_img\sun.jpg" alt="">
       </div>
-      <div class="right">
-        <img class="pc" src="<?php bloginfo("template_url"); ?>/atsu_img\sun.jpg" alt="">
+      <div class="about_text">
+            <div class="about_text_title">
+              <span class="en"><span>P</span>rofile....</span>
+              <span class="ja">D.GATE,中の人</span>
+            </div>
+            <div class="about_text_dis">
+              1973年生/大阪府出身/A型/水瓶座<br>
+              学力と絵心は全くなし。ですが夢を追いかけたくて必死でプログラミングを学びました。<br>
+              現在は、脱！会社員を目標にフリーランス活動を積極的に展開中です。
+            </div>
       </div>
     </div>
 
     <!-- design ゾーン -->
     <div class="about_inner">
-      <div class="left">
-        <div class="text-area">
-          <h2 class="title">
-            <span class="en"><span>D</span>:sign....</span>
-            <span class="ja">採用作品&選考作品</span>
-          </h2>
-          <p class="copy">
-          ロゴ・名刺・チラシ・メニュー表などの制作を承っております。
-          クラウドソーシングサイトにて受注頂いております。
-          先ずはお気軽にご相談ください。
-          </p>
-        </div>
+      <div class="about_img">
+        <img src="<?php bloginfo("template_url"); ?>/atsu_img\desk.jpg" alt="">
       </div>
-      <div class="right">
-        <img class="pc" src="<?php bloginfo("template_url"); ?>/atsu_img\desk.jpg" alt="">
+      <div class="about_text">
+            <div class="about_text_title">
+              <span class="en"><span>D</span>:sign....</span>
+              <span class="ja">採用作品&選考作品</span>
+            </div>
+            <div class="about_text_dis">
+              ロゴ・名刺・チラシ・メニュー表などの制作を承っております。
+              クラウドソーシングサイトにて受注頂いております。
+              先ずはお気軽にご相談ください。
+            </div>
       </div>
     </div>
 
     <!-- portfolioゾーン -->
     <div class="about_inner">
-      <div class="left">
-        <div class="text-area">
-          <h2 class="title">
-            <span class="en"><span>P</span>ortfolio.</span>
-            <span class="ja">模写修行～自作サイトへの道</span>
-          </h2>
-          <p class="copy">
-            コーディングができるようになっても、サイトのデザインは多種多様です。
-            一つのサイトを作る時間やユーザー様のニーズに合わせられるように、
-            日々スキルUPをしコンバージョン率の取れるサイト作りを目指しています。
-          </p>
-        </div>
-      </div>
-      <div class="right">
+      <div class="about_img">
         <img class="pc" src="<?php bloginfo("template_url"); ?>/atsu_img\vintage.jpg" alt="">
+      </div>
+      <div class="about_text">
+            <div class="about_text_title">
+              <span class="en"><span>P</span>ortfolio.</span>
+              <span class="ja">模写修行～自作サイトへの道</span>
+            </div>
+            <div class="about_text_dis">
+              コーディングができるようになっても、サイトのデザインは多種多様です。
+              一つのサイトを作る時間やユーザー様のニーズに合わせられるように、
+              日々スキルUPをしコンバージョン率の取れるサイト作りを目指しています。
+            </div>
       </div>
     </div>
   </div>
-</div>
+
 <!-- 共通コンテンツ -->
-<div id="contact" class="contact content__items">
-	<div class="content__inner">
+<div id="blog" class="blog content_items">
+	<div class="content_inner">
 		<!--コンテンツのタイトルエリア-->
-		<div class="content__header">
-			<div class="content__header__inner">
+		<div class="content_header">
+			<div class="content_header_inner">
 				Blog
 				<!--下線-->
-				<div class="content__header__border"></div>
+				<div class="content_header_border"></div>
       </div>
     </div>
   </div>
   <div class="blog_content">
-<?php
-// 指定したカテゴリーの ID を取得
-$category_id = get_cat_ID('Blog');
-// このカテゴリーの URL を取得(ニュース一覧はこちら用のリンク)
-$category_link = get_category_link($category_id);
-// 指定した記事のみ取得
-query_posts([
-    'posts_per_page' => 3,
-    'cat' => $category_id,
-]);
-?>
-<?php
-if (have_posts()) : //記事があるか判定
-    while (have_posts()) : //記事一覧を取得するループを開始
-        the_post(); //ループ中、次の記事に進みます
-?>
+  <?php
+  // 指定したカテゴリーの ID を取得
+  $category_id = get_cat_ID('Blog');
+  // このカテゴリーの URL を取得(ニュース一覧はこちら用のリンク)
+  $category_link = get_category_link($category_id);
+  // 指定した記事のみ取得
+  query_posts([
+      'posts_per_page' => 3,
+      'cat' => $category_id,
+  ]);
+  ?>
+  <?php
+  if (have_posts()) : //記事があるか判定
+      while (have_posts()) : //記事一覧を取得するループを開始
+          the_post(); //ループ中、次の記事に進みます
+  ?>
 	<!--1記事-->
     <a href="">
         <div class="blog_items">
@@ -150,14 +142,14 @@ if (have_posts()) : //記事があるか判定
 </div>
 
 <!-- 共通コンテンツ -->
-<div id="contact" class="contact content__items">
-	<div class="content__inner">
+<div id="links" class="links content_items">
+	<div class="content_inner">
 		<!--コンテンツのタイトルエリア-->
-		<div class="content__header">
-			<div class="content__header__inner">
+		<div class="content_header">
+			<div class="content_header_inner">
 				Links
 				<!--下線-->
-				<div class="content__header__border"></div>
+				<div class="content_header_border"></div>
         </div>
     </div>
   </div>
@@ -189,14 +181,14 @@ if (have_posts()) : //記事があるか判定
 
 
 <!-- 共通コンテンツ -->
-<div id="contact" class="contact content__items">
-	<div class="content__inner">
+<div id="contact" class="contact content_items">
+	<div class="content_inner">
 		<!--コンテンツのタイトルエリア-->
-		<div class="content__header">
-			<div class="content__header__inner">
+		<div class="content_header">
+			<div class="content_header_inner">
 				Contact
         <!--下線-->
-        <div class="content__header__border"></div>
+        <div class="content_header_border"></div>
       </div>
     </div>
   </div>
@@ -208,7 +200,7 @@ if (have_posts()) : //記事があるか判定
       <p>Web制作からデザイン作成のご依頼・ご相談はお問い合わせフォームよりご連絡ください。</p>
     </div>
     <div class="contact_button">
-      <a class="contact_btn" href="#">お問い合わせはこちらから<span></span></a>
+      <a class="contact_btn" href="https://dgate-webstyle.net/?page_id=19">お問い合わせはこちらから<span></span></a>
     </div>
   </div>
 </div>
