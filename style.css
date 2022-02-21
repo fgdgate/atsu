@@ -65,58 +65,6 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-/****************************************
-* レスポンシブ対応
-*****************************************/
-@media screen and (min-width:769px) {
-	#contents{
-		display: flex;
-		max-width: 1500px;
-		margin: 0 auto;
-	}
-}
-@media screen and (max-width:768px) {
-	#contents{
-		width:100%;
-		margin: 0;
-	}
-}
-/* @media screen and (max-width:480px) {
-	#contents{
-		width: 95%;
-		margin: 0;
-		
-	}
-	#contents img{
-		width: 95%;
-		height: 300px;
-	}
-} */
-/* 以下は画面サイズが1024px以上になったら適応されます */
-@media screen and (min-width: 768px) {
-	#contents {
-		display: flex;
-		max-width: 1500px;
-		font-size: 1.125;
-		margin: 0 auto;
-	}
-}
-
-/* 以下は画面サイズが768px以下になったら適応されます */
-/* @media screen and (max-width: 768px) {
-	#contents {
-		width: 100%;
-		margin: 0 auto;
-	}
-} */
-
-/* 以下は画面サイズが768px〜1024pxまでのあいだに適応されます */
-/* @media screen and (min-width:768px) and (max-width:1024px){
-	#contents {
-		display: flex;
-		margin: 0 auto;
-	}
-    } */
 
 /****************************************
 * フォント設定
@@ -181,6 +129,12 @@ header {
 }
 .header_nav>*+* {
 	margin-left: 60px;
+}
+.nav_contact{
+    background-color: #febd69;
+	border: solid 1px #4791AA;
+	border-radius: 5px;
+    padding: 0 10px;
 }
 .nav_item a {
 	color: #000;
@@ -291,13 +245,13 @@ header {
 /* header */
 	 .header_inner{
 		width: 100%;
-		margin: 0;
-		 justify-content: flex-start;
+		margin: 0 auto;
+		 justify-content: flex;
 		align-items: center;
 	 }
 	.header_inner h2{
 		text-align: center;
-		margin-left: 60px;
+		margin: 0 auto;
 	}
 	.i{
 		width: auto;
@@ -350,9 +304,8 @@ header {
 *----------------------------*/
 	.menu-btn{
 		position: fixed;
-		top: 70px;
-		right: 20px;
-		z-index: 2;
+		top: 20px;
+		right: 30px;
 		width: 50px;
 		height: 50px;
 		border-radius: 10px;
@@ -402,8 +355,8 @@ header {
 
 .slider_text p {
 	position: absolute;
-	top: 68%;
-	left: 68%;
+	top: 60%;
+	left: 40%;
 	transform: translateY(-50%) translateX(-50%);
 	max-width: 1500px;
 	color: #fff;
@@ -411,8 +364,14 @@ header {
 	font-size: 1.875rem;
 	font-weight: 400;
 	line-height: 1.2;
-	z-index: 9990;
+	z-index: 9997;
 }
+/*PC表示時のテキストの改行*/
+.br__pc::before {
+	content: "\A";
+	white-space: pre;
+}
+
 /* TOP画像 レスポンシブ */
 
 @media screen and (max-width: 900px) {
@@ -426,11 +385,16 @@ header {
 	}
 	.slider_text p {
 		position: none;
-		top: 70%;
+		top: 75%;
 		left: 38%;
-		transform: translateY(-0%) translateX(-50%);
+		transform: translateY(-50%) translateX(-50%);
 		font-size: 1.275rem;
-		line-height: 4;
+		line-height: 1.5;
+	}
+	/*スマホ表示時のテキストの改行*/
+	.br__sp::before, .br__pc::before {
+		content: "\A\A";
+		white-space: pre;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -444,11 +408,16 @@ header {
 	}
 	.slider_text p {
 		position: none;
-		top: 65%;
+		top: 60%;
 		left: 38%;
-		transform: translateY(-0%) translateX(-50%);
-		font-size: 1.275rem;
-		line-height: 4;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 1.2rem;
+		line-height: 1.2;
+	}
+	/*スマホ表示時のテキストの改行*/
+	.br__sp::before, .br__pc::before {
+		content: "\A\A";
+		white-space: pre;
 	}
 }
 @media screen and (max-width: 480px) {
@@ -465,8 +434,13 @@ header {
 		top: 45%;
 		left: 38%;
 		transform: translateY(-0%) translateX(-50%);
-		font-size: 1.275rem;
-		line-height: 4;
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+	/*スマホ表示時のテキストの改行*/
+	.br__sp::before, .br__pc::before {
+		content: "\A\A";
+		white-space: pre;
 	}
 }
 
@@ -484,7 +458,7 @@ header {
 	background: #4791AA;
 	opacity: 0.6;
 	border-radius: 50%;
-	z-index: 9995;
+	z-index: 9996;
     }
     #page_top a{
 	position: relative;
@@ -522,7 +496,14 @@ header {
 	text-align: center;
     }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:900px){
+	#page_top{
+		right: 20px;
+		bottom: 10px;
+	}
+}
+	
+@media screen and (max-width:480px){
 	#page_top{
 		display: none;
 	    }
@@ -550,11 +531,11 @@ header {
 	border-bottom: solid 3px #4791AA;
 }
 .content_items {
-	padding: 50px 0 70px;
+	padding: 50px 0 0;
 	margin: 0 auto;
 }
 .content_inner {
-	max-width: 1500px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -578,8 +559,8 @@ header {
 		border-bottom: solid 3px #4791AA;
 	}
 	.content_items {
-		max-width: 1500px;
-		padding: 50px 0 70px;
+		width: 100%;
+		padding: 50px 0 0;
 		margin: 0 auto;
 	}
 	.content_inner {
@@ -721,13 +702,13 @@ header {
 		width: 50%;
 		display: block;
 		margin: 0 auto;
-		padding: 20px;
+		padding: 0;
 	}
 	.about_text {
 		width: 50%;
 		display: block;
 		margin: 0 auto;
-		padding: 40px 0;
+		padding: 0 0 60px;
 	}
 	.about_text_title {
 		font-size: 1.5rem;
@@ -736,7 +717,7 @@ header {
 	}
 	.about_text_title .en {
 		display: inline-block;
-		font-size: 2rem;
+		font-size: 1.75rem;
 		font-weight: bold;
 		margin-bottom: 16px;
 		letter-spacing: 2;
@@ -801,25 +782,117 @@ header {
 	color: #a52a2a;
 }
 .blog_button {
+	max-width: 300px;
+  	margin: 0 auto;
+}
+.blog_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #febd69;
+	box-sizing: border-box;
+	width: 100%;
+	height: 80px;
+	padding: 0 25px;
+	color: #febd69;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	text-decoration: none;
 	position: relative;
-	border-radius: 10px;
-	border: solid 1px #aaa;
+	transition-duration: 0.2s;
+}
+.blog_btn:hover {
+	background: #febd69;
+	border: 1px solid #febd69;
 	color: #fff;
-	background-color: #febd69;
-	box-shadow: 2px 2px 0 #888;
-	font-weight: 600;
-	max-width: 220px;
-	margin: 0 auto;
-	margin-top: 40px;
-	padding: 15px 40px;
-	text-align: center;
 }
-.blog_button:hover {
-	background-color: #4791AA;
+.blog_btn::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 40px 50px;
+	border-color: transparent transparent #febd69 transparent;
+}
+.blog_btn span {
+	position: absolute;
+	bottom: 12px;
+	right: 20px;
+	display: inline-block;
+}
+.blog_btn span::before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: #ffffff;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -8px;
+}
+.blog_btn span::after {
+	content: '';
+	width: 6px;
+	height: 6px;
+	border: 0;
+	border-top: 2px solid #febd69;
+	border-right: 2px solid #febd69;
+	transform: rotate(45deg);
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	margin-top: -3px;
 }
 
-
-@media screen and (max-width:480px) {
+@media screen and (max-width:900px){
+	.blog_button {
+		max-width: 300px;
+		  margin: 20px auto 0;
+	}
+	.blog_btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #febd69;
+		border: 1px solid #c0c0c0;
+		box-sizing: border-box;
+		width: 100%;
+		height: 80px;
+		padding: 0 25px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		text-decoration: none;
+		position: relative;
+		transition-duration: 0.2s;
+	}
+	.blog_btn:hover {
+		display: none;
+	}
+	.blog_btn::before {
+		display: none;
+	}
+	.blog_btn span {
+		position: absolute;
+		bottom: 12px;
+		right: 20px;
+		display: inline-block;
+	}
+	.blog_btn span::before {
+		display: none;
+	}
+	.blog_btn span::after {
+		display: none;
+	}
+}
+@media screen and (max-width:480px){
 	.blog_content {
 		width: 95%;
 		padding: 0 0 40px;
@@ -828,7 +901,7 @@ header {
 	.blog_items {
 		width: 90%;
 		padding: 20px 0;
-		margin: 10px 0;
+		margin: 0 auto;
 	}
 	.blog_item {
 		display: block;
@@ -848,15 +921,44 @@ header {
 		display: none;
 	}
 	.blog_button {
-		font-size: 0.8rem;
-		font-weight: 400;
-		max-width: 200px;
+		max-width: 300px;
+		  margin: 20px auto 0;
 	}
-	.blog_button:hover {
+	.blog_btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #febd69;
+		border: 1px solid #c0c0c0;
+		box-sizing: border-box;
+		width: 100%;
+		height: 80px;
+		padding: 0 25px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		text-decoration: none;
+		position: relative;
+		transition-duration: 0.2s;
+	}
+	.blog_btn:hover {
 		display: none;
 	}
-	.a_btn{
-		color: #000;
+	.blog_btn::before {
+		display: none;
+	}
+	.blog_btn span {
+		position: absolute;
+		bottom: 12px;
+		right: 20px;
+		display: inline-block;
+	}
+	.blog_btn span::before {
+		display: none;
+	}
+	.blog_btn span::after {
+		display: none;
 	}
 }
 
@@ -870,25 +972,49 @@ header {
 	grid-template-rows: 280px 280px;
 	gap: 16px;
 	text-align: center;
+	margin: auto;
 }
 .links_grid {
 	/* background-clip: padding-box; */
     /* border: 1px solid #bdbdbd; */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+/*     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important; */
 }
 
-@media screen and (max-width:480px) {
+.links_grid img {
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+}
+
+
+@media screen and (max-width:900px){
+	.links_container {
+		width: 90%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 260px 260px;
+		gap: 16px;
+		text-align: center;
+		margin: auto;
+		align-items: center;
+}
+.links_grid {
+	/* background-clip: padding-box; */
+    /* border: 1px solid #bdbdbd; */
+/* 		box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important; */
+	}
+}
+@media screen and (max-width:480px){
 	.links_container {
 		width: 90%;
 		grid-template-columns: 1fr 1fr ;
-		grid-template-rows: 220px 220px;
-		gap: 10px;
-		margin: 0 auto;
+		grid-template-rows: 260px 260px;
+		gap: 16px;
+		margin: auto;
+		align-items: center;
 	}
 	.links_grid {
 		/* background-clip: padding-box; */
 	    /* border: 1px solid #bdbdbd; */
-	    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+/* 	    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important; */
 	}
 	
 }
@@ -910,6 +1036,8 @@ header {
 	margin: 0 auto;
 	padding: 30px 0;
 	text-align: left;
+    padding: 20px 20px;
+    border: solid 1px #4791AA;
 	letter-spacing: 5px;
 }
 .contact_button {
@@ -926,6 +1054,7 @@ header {
 	width: 100%;
 	height: 80px;
 	padding: 0 25px;
+	margin: 60px 0;
 	color: #febd69;
 	font-size: 16px;
 	font-weight: bold;
@@ -957,7 +1086,7 @@ header {
 	display: inline-block;
 }
 .contact_btn span::before {
-	content: '';
+	content: "";
 	width: 16px;
 	height: 16px;
 	background: #ffffff;
@@ -968,7 +1097,7 @@ header {
 	margin-top: -8px;
 }
 .contact_btn span::after {
-	content: '';
+	content: "";
 	width: 6px;
 	height: 6px;
 	border: 0;
@@ -981,15 +1110,7 @@ header {
 	margin-top: -3px;
 }
 
-@media screen and (max-width:480px) {
-	.contact_inner {
-		width: 100%;
-		margin: 40px auto;
-	}
-	.contact_img {
-		text-align: center;
-		padding-bottom: 20px;
-	}
+@media screen and (max-width:900px){
 	.contact_text {
 		width: 400px;
 		padding: 20px 20px;
@@ -1022,7 +1143,63 @@ header {
 		display: none;
 	}
 	.contact_btn::before {
+		/* display: none; */
+	}
+	.contact_btn span {
+		position: absolute;
+		bottom: 12px;
+		right: 20px;
+		display: inline-block;
+	}
+	.contact_btn span::before {
 		display: none;
+	}
+	.contact_btn span::after {
+		display: none;
+	}
+}
+@media screen and (max-width:480px){
+	.contact_inner {
+		width: 100%;
+		margin: 40px auto;
+	}
+	.contact_img {
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.contact_text {
+		width: 260px;
+		padding: 20px 20px;
+		border: solid 1px #4791AA;
+		line-height: 1.5;
+	}
+	.contact_button {
+		max-width: 300px;
+		  margin: 20px auto 0;
+	}
+	.contact_btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #febd69;
+		border: 1px solid #c0c0c0;
+		box-sizing: border-box;
+		width: 100%;
+		height: 80px;
+		padding: 0 25px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		text-decoration: none;
+		position: relative;
+		transition-duration: 0.2s;
+	}
+	.contact_btn:hover {
+		display: none;
+	}
+	.contact_btn::before {
+		/* display: none; */
 	}
 	.contact_btn span {
 		position: absolute;
@@ -1081,13 +1258,34 @@ footer {
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px){
+	.footer_box {
+		margin: 0;
+	}
+	.footer_box p{
+		font-size: 1rem;
+	}
+	.icon {
+		width: 100%;
+		/* display:block; */
+		margin: 0;
+		top: 65%;
+		left: 0%;
+	}
+	.icon img{
+		width: 40px;
+		height: 40px;
+		padding-left: 24px;
+	}
+}
+	
+@media screen and (max-width: 480px){
 	.footer_box {
 		position: absolute;
 		margin: 0;
 	}
 	.footer_box p{
-		font-size: .8rem;
+		font-size: .675rem;
 	}
 	.icon {
 		width: 95%;
@@ -1097,22 +1295,20 @@ footer {
 		left: 0%;
 	}
 	.icon img{
-	width: 30px;
-	height: 30px;
-	padding-left: 24px;
-}
+		width: 30px;
+		height: 30px;
+		padding-left: 24px;
+	}
 }
 
 
 /****************************************
 * コンタクトフォーム設定
-*****************************************/
-/****************************************
+
 * 固定ページ
 *****************************************/
 .page_header {
-	width: 100%;
-	height: 250px;
+	height: 500px;
 	position: relative;
 }
 .page_header img {
@@ -1120,7 +1316,7 @@ footer {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 500px;
+	height: 100%;
 	object-fit: cover;
 	object-position: center bottom;
 }
@@ -1129,14 +1325,39 @@ footer {
 	top: 50%;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
-	color: #fff;
+	color: #4791AA;
 	font-size: 1.8rem;
 	font-weight: bold;
+	text-shadow: 1px -1px #ffffff;
 }
 .page_header_border {
-	width: 50px;
-	border-bottom: solid 2px #fff;
+	width: 60px;
+	border-bottom: solid 2px #4791AA;
 	margin: 0 auto;
+	padding-top: 10px;
+}
+
+@media screen and (max-width: 480px){
+.page_header img {
+	height: 60%;
+	margin: 0;
+}
+.page_header_title {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	color: #4791AA;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-shadow: 1px -1px #ffffff;
+}
+.page_header_border {
+	width: 60px;
+	border-bottom: solid 2px #4791AA;
+	margin: 0 auto;
+	padding-top: 10px;
+}
 }
 /****************************************
 * 投稿内容
@@ -1150,78 +1371,135 @@ footer {
 	font-weight: bold;
 	margin: 40px auto;
 }
+
 /****************************************
-* ContactForm7
+* WPFform 設定
 *****************************************/
-.ContactForm7__contact {
-    margin: 60px auto;
-    width: 700px;
-	font-family: Arial, Helvetica, sans-serif;
-    padding: 0 20px;
-}
-.ContactForm7__contact__title {
+div.wpforms-container-full .wpforms-form .wpforms-title{
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 40px;
+    color: #4791aa;
+    font-weight: 700;
+	margin: 40px 0;
+    padding: 40px 0;
+	font-family: メイリオ;
 }
-.ContactForm7__contact__title p{
-	font-size: 0.8rem;
-	margin-top:20px;
-	font-weight:normal;
+div.wpforms-container-full .wpforms-form ul li{
+	font-weight: 200;
+	font-size: 0.75rem;
+	font-family: sans-serif;
+	line-height: 1.5;
 }
-.ContactForm7__contact__label {
-    font-weight: bold;
+div.wpforms-container-full .wpforms-form .wpforms-description{
+	margin: 0 0 10px 350px;
 }
-.ContactForm7__contact__label span {
-    font-weight: 600;
-    color: #fff;
-    background-color: #f00;
-    padding: 0;
-    margin: 0;
-    font-size: 0.6rem;
+div.wpforms-container-full .wpforms-form .wpforms-field{
+	font-family: メイリオ;
+	padding-left: 350px;
 }
-.ContactForm7__contact input, .ContactForm7__contact textarea {
-    width: 100%;
-    border: none;
-    border: solid 1px #4791AA;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 20px auto 40px;
+div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
+    width: 60%;
 }
-.ContactForm7__contact textarea {
-    height: 45vh;
+div.wpforms-submit-container{
+	text-align: center;
 }
-.ContactForm7__contact__submit {
+div.wpforms-container-full .wpforms-form button[type=submit]{
+	width: 200px;
+	background-color: #febd69;
+	margin: 40px 0;
+}
+
+/****************************************
+* 下層固定 投稿フォーム
+*****************************************/
+.single_container{
+	max-width: 60%;
+	margin: 0 auto;
+}
+.single_title {
+	width: 50%;
+	color: #4791AA;
+	font-size: 1.5rem;
+	font-weight: bold;
+	border-bottom: solid 2px #4791AA;
+	margin: 40px auto 0;
+}
+.single_container img {
+	display: flex;
+    width: 50%;
+    height: 400px;
     text-align: center;
-    max-width: 380px;
-    margin: 0 auto;
+    margin: 40px auto 0;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important; 
+	
 }
-.ContactForm7__contact input[type="submit"] {
-    color: #fff;
-    background-color: #febd69;
-    border-radius: 50px;
+.single_link img{
+    width: 1000%;
+    height: 240px;
+	/* box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important; */
+}
+.single_link{
+	display: inline-block;
+}
+
+/****************************************
+* 投稿内容
+*****************************************/
+.article_single {
+	max-width: 66%;
+	margin: 20px auto;
+	border: solid 1px #4791aa;
+	padding: 0 20px 10px;
+}
+.article_single p {
+	margin: 40px auto;
+	line-height: 2;
+}
+.article_single strong{
+	font-weight: bold;
+}
+.article_single span{
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: red;
+}
+.cat-data{
+	display: none;
+}
+
+@media screen and (max-width: 900px){}
+@media screen and (max-width: 768px){}
+@media screen and (max-width: 480px){
+	.single_container{
+	width: 95%;
+}
+.single_title {
+	width: 100%;
     font-size: 1.2rem;
+    border-bottom: solid 1px #4791AA;
+    margin: 40px 0;
 }
-@media screen and (max-width: 480px) {
-	.page__header{
-		width: 100%;
-		margin: 0;
-	}
-	.page__hedae__img{
-		width: 100%;
-		height: 30%;
-	}
-    .ContactForm7__contact {
-        padding: 10px;
-    }
-	.ContactForm7__contact input{
-		width: 85%;
-	}
-	.ContactForm7__contact textarea{
-		height:40vh;
+.single_container img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+	
+}
+/****************************************
+* 投稿内容
+*****************************************/
+	.article_single {
+    width: 100%;
+    display: contents;
+    border: none;
+    padding: 0 10px;
+}
+.article_single p {
+	margin: 40px auto;
+	line-height: 1.5;
 	}
 }
+
 
 /*
 疑似要素（before）で白いボックスを作り画像の上に重ねる
@@ -1229,13 +1507,13 @@ footer {
 positionとrightで画像の上に重ねる
 */
 /* .content .left01::before {
-	content: "";
-	width: 123px;
-	height: 100%;
-	background: #fff;
-	position: absolute;
-	right: 386px;
-	transform: skew(17deg);
+    content: "";
+    width: 123px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    right: 386px;
+    transform: skew(17deg);
 } */
 
 /****************************************
@@ -1250,12 +1528,88 @@ positionとrightで画像の上に重ねる
 /* CSSのdisplayプロパティで切り替え */
 /* css用 */
 /* @media screen and (min-width:481px) {
-	.sp{
-		display: none;
-	}
+    .sp{
+        display: none;
+    }
 } */
 /* @media screen and (max-width:480px) {
-	.pc{
-		display: none;
-	}
+    .pc{
+        display: none;
+    }
+} */
+
+
+/****************************************
+* ContactForm7
+*****************************************/
+/* .ContactForm7_contact{
+    margin: 60px auto;
+    width: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px;
+}
+.ContactForm7_contact_title{
+    text-align: center;
+    font-size: 1.6rem;
+    color: #4791AA;
+    font-weight: bold;
+    margin: 40px 0;
+}
+.ContactForm7_contact_title p{
+    font-size: 0.8rem;
+    margin-top:20px;
+    font-weight:normal;
+    color: #000;
+}
+.ContactForm7_contact_label{
+    font-weight: 500;
+}
+.ContactForm7_contact_label span{
+    font-weight: 600;
+    color: #fff;
+    background-color: #f00;
+    padding: 0;
+    margin: 0;
+    font-size: 0.6rem;
+}
+.ContactForm7_contact input, .ContactForm7_contact textarea{
+    width: 100%;
+    border: none;
+    border: solid 1px #4791aa;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px auto 40px;
+}
+.ContactForm7_contact textarea{
+    height: 45vh;
+}
+.ContactForm7_contact_submit{
+    text-align: center;
+    max-width: 380px;
+    margin: 0 auto;
+}
+.ContactForm7_contact input[type="submit"]{
+    color: #fff;
+    background-color: #febd69;
+    border-radius: 50px;
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 480px){
+    .page_header{
+        width: 100%;
+        margin: 0;
+    }
+    .page_hedae_img{
+        width: 100%;
+        height: 30%;
+    }
+    .ContactForm7_contact{
+        padding: 10px;
+    }
+    .ContactForm7_contact input{
+        width: 85%;
+    }
+    .ContactForm7_contact textarea{
+        height:40vh;
+    }
 } */

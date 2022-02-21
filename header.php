@@ -34,7 +34,7 @@
 				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#about">About</a></div>
 				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#blog">blog</a></div>
 				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#links">Links</a></div>
-				<div class="nav_item"><a href="<?php bloginfo('url'); ?>#contact">Contact</a></div>
+				<div class="nav_item"><a class="nav_contact" href="<?php bloginfo('url'); ?>/contact">Contact</a></div>
 			</div>
 						<!-- ハンバーガーメニュー用 -->
 			<button type="button" class="menu-btn">
